@@ -1,0 +1,4 @@
+debian/uecide/core.txt cores/arduino-sam
+debian/uecide/icons cores/arduino-sam
+tmp/sam/cores/arduino cores/arduino-sam
+tmp/sam/system cores/arduino-sam

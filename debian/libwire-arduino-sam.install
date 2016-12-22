@@ -1,0 +1,4 @@
+tmp/sam/libraries/Wire/examples libraries/Communications/arduino-sam/Wire
+tmp/sam/libraries/Wire/keywords.txt libraries/Communications/arduino-sam/Wire
+tmp/sam/libraries/Wire/src/Wire.cpp libraries/Communications/arduino-sam/Wire
+tmp/sam/libraries/Wire/src/Wire.h libraries/Communications/arduino-sam/Wire

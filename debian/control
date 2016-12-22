@@ -1,0 +1,51 @@
+Source: arduino-sam
+Section: cores
+XBSC-Family: arm-sam
+Priority: extra
+Maintainer: Matt Jenkins <matt@majenko.co.uk>
+XBSC-TieCore: arduino-sam
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: http://arduino.cc
+
+Package: arduino-sam
+Section: cores
+Architecture: all
+XBSC-Group: Arduino
+Depends: arm-sam-gcc, bossac
+Recommends: libethernet-arduino-sam, libgsm-arduino-sam, libliquidcrystal-arduino-sam, libsd-arduino-sam, libservo-arduino-sam, libsoftwareserial-arduino-sam, libspi-arduino-sam, libstepper-arduino-sam, libtft-arduino-sam, libwifi-arduino-sam, libwire-arduino-sam
+Description: Arduino SAM Core (ARM boards)
+ The standard Arduino 1.6.x core for ARM SAM3X boards
+
+Package: libspi-arduino-sam
+Section: libraries
+Architecture: all
+XBSC-Group: Communications
+XBSC-Subgroup: SPI
+Depends: arduino-sam
+Provides: SPI.h
+Description: Arduino SAM3X SPI Library
+ The standard Arduino SPI library
+
+Package: libwire-arduino-sam
+Section: libraries
+Architecture: all
+XBSC-Group: Communications
+XBSC-Subgroup: I2C
+Depends: arduino-sam
+Provides: Wire.h
+Description: Arduino SAM3X Wire Library
+ Connect I2C devices to an Arduino
+
+Package: libhid-arduino-sam
+Section: libraries
+Architecture: all
+XBSC-Group: Communications
+XBSC-Subgroup: USB
+Depends: arduino-sam
+Provides: HID.h
+Description: Arduino SAM3X HID Library
+ Arduino HID interface
+
+
+

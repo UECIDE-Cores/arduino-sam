@@ -1,0 +1,3 @@
+tmp/sam/libraries/HID/keywords.txt libraries/Communication/arduino-sam/HID
+tmp/sam/libraries/HID/src/HID.cpp libraries/Communication/arduino-sam/HID
+tmp/sam/libraries/HID/src/HID.h libraries/Communication/arduino-sam/HID

@@ -1,0 +1,4 @@
+tmp/sam/libraries/SPI/examples/ libraries/Communications/arduino-sam/SPI
+tmp/sam/libraries/SPI/keywords.txt libraries/Communications/arduino-sam/SPI
+tmp/sam/libraries/SPI/src/SPI.cpp libraries/Communications/arduino-sam/SPI
+tmp/sam/libraries/SPI/src/SPI.h libraries/Communications/arduino-sam/SPI

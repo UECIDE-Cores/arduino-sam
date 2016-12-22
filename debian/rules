@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEBVERS := $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
+VERSION := $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[~-].*//')
+
+JSON_URL=http://downloads.arduino.cc/packages/package_index.json
+
+CORE_URL=$(shell debian/parse_json.php -i package_index.json -P "Arduino SAM Boards (32-bits ARM Cortex-M3)" -v $(VERSION) -p arduino -k url)
+CORE_NAME=$(shell debian/parse_json.php -i package_index.json -P "Arduino SAM Boards (32-bits ARM Cortex-M3)" -v $(VERSION) -p arduino -k archiveFileName)
+
+
+%:
+	dh $@ 
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+
+override_dh_auto_build:
+	wget -c $(JSON_URL)
+	wget -c `debian/parse_json.php -i package_index.json -P "Arduino SAM Boards (32-bits ARM Cortex-M3)" -v $(VERSION) -p arduino -k url`
+	mkdir -p tmp
+	tar -C tmp -jxf `debian/parse_json.php -i package_index.json -P "Arduino SAM Boards (32-bits ARM Cortex-M3)" -v $(VERSION) -p arduino -k archiveFileName`
+
+override_dh_auto_clean:
+	rm -rf tmp sam-*.tar.bz2 package_index.json
